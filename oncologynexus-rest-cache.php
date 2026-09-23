@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class OncologyNexus_REST_Cache {
 
-    const TTL_DEFAULT = 60;
+    const TTL_DEFAULT = 60 * 15;
 
     public function __construct() {
         add_filter( 'rest_pre_dispatch', array( $this, 'maybe_serve_cache' ), 10, 3 );
