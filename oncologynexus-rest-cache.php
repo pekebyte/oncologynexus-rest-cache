@@ -113,6 +113,11 @@ class OncologyNexus_REST_Cache {
             return false;
         }
 
+        // Term blocks resolve editable templates and must reflect saves immediately.
+        if ( $route === '/oncologynexus/v1/term-blocks' ) {
+            return false;
+        }
+
         // Skip authenticated requests.
         if ( $request->get_header( 'x_wp_nonce' ) || $request->get_header( 'authorization' ) ) {
             return false;
